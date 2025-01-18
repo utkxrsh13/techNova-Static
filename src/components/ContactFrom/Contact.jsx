@@ -24,7 +24,7 @@ const Contact = () => {
   };
   return (
     <StyledWrapper>
-      <div className="form-container mx-auto sm:w-[400px] lg:w-[600px]">
+      <div className="form-container mx-auto max-w-xl sm:w-[200px] lg:w-[600px]">
         <div className="form">
           <span className="heading">Get in touch</span>
 
@@ -77,7 +77,7 @@ const StyledWrapper = styled.div`
 
   .form-container {
     max-width: 700px;
-    width: 500px;
+    // width: 500px;
     background-color: #001925;
     padding: 20px;
     border-left: 5px solid #ff7a01;

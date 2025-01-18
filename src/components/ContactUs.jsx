@@ -10,7 +10,7 @@ const ContactUs = () => {
 >
   <div className="gap-2 flex flex-col sm:flex-col lg:flex-row justify-evenly w-full">
     <div className="rounded-l p-3 w-full">
-      <h2 className="text-2xl dark:text-white font-bold translate-x-[40%] mb-6 text-gray-800">
+      <h2 className="text-4xl dark:text-white inline-block font-bold mb-6 underline decoration-orange-600 ml-14 text-gray-800">
         Contact Us
       </h2>
       <Contact />

@@ -6,13 +6,13 @@ const Service = () => {
     <div id="services" className="bg-gradient-to-b h-screen from-green-100 to-green-200 dark:bg-gradient-to-b dark:from-[#212224] dark:to-[#14452F] dark:text-white">
       <section className="pb-14 pt-20 lg:pb-[90px] lg:pt-[10px]">
         <div className="container mx-auto">
-          <div className="-mx-4 flex flex-wrap">
+          <div className="flex flex-wrap">
             <div className="w-full px-4">
               <div className="mx-auto mb-12 max-w-[510px] text-center lg:mb-20">
-                <span className="mb-5 block text-xl font-semibold underline">
+                <span className="mb-5 block text-xl font-semibold underline decoration-orange-600">
                   Our Services
                 </span>
-                <h2 className="mb-3 text-3xl font-bold leading-[1.2] lg:text-5xl dark:text-white text-black sm:text-4xl md:text-[40px]">
+                <h2 className="mb-3 text-3xl font-bold leading-[1.2] lg:text-5xl dark:text-[#ADFF2F] text-black sm:text-4xl md:text-[40px]">
                   What We Offer
                 </h2>
                 <p className="text-base text-body-color dark:text-dark-6">

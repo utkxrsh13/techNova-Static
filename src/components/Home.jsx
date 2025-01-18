@@ -11,10 +11,10 @@ function Home() {
   const handleAnimationComplete = () => {
     console.log('Animation completed!');
   }
- 
-  const [theme, setTheme] = useState('dark'); 
+
+  const [theme, setTheme] = useState('dark');
   useEffect(() => {
-    document.body.className = theme;  
+    document.body.className = theme;
   }, [theme]);
 
   const toggleTheme = () => {
@@ -42,25 +42,30 @@ function Home() {
                 <i className="ri-menu-line text-xl"></i>
               </button>
               <div className={`font-semibold mt-3 pt-3 sm:flex gap-4 ${isNavbarOpen ? 'block' : 'hidden'} sm:block`}>
-                <a className="mr-4 hover:underline hover:text-gray-600" href="#home">Home</a>
-                <a className="mr-4 hover:underline hover:text-gray-600" href="#services">Services</a>
-                <a className="mr-4 hover:underline hover:text-gray-600" href="#about-us">About Us</a>
-                <a className="mr-4 hover:underline hover:text-gray-600" href="#contact-us">Contact Us</a>
+                <a className="mr-4 hover:underline hover:decoration-orange-600 hover:text-gray-300" href="#home">Home</a>
+                <a className="mr-4 hover:underline hover:decoration-orange-600 hover:text-gray-300" href="#services">Services</a>
+                <a className="mr-4 hover:underline hover:decoration-orange-600 hover:text-gray-300" href="#about-us">About Us</a>
+                <a className="mr-4 hover:underline hover:decoration-orange-600 hover:text-gray-300" href="#contact-us">Contact Us</a>
               </div>
             </div>
-            <button className="mt-3 inline-flex items-center justify-center px-5 py-2.5 text-base font-semibold text-black border-2 border-black dark:text-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white rounded-2xl transition-all duration-300">
+            <button className={`mt-3 inline-flex items-center justify-center ${isNavbarOpen ? 'hidden' : 'block'} px-5 py-2.5 text-base font-semibold text-black border-2 border-black dark:text-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white rounded-2xl transition-all duration-300`}>
               Get Started
             </button>
           </div>
-          <button
+        </div>
+        
+      </header>
+      <button
             onClick={toggleTheme}
-            className="fixed bottom-5 right-5 sm:relative sm:bottom-auto sm:right-auto sm:mt-3 flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-black dark:text-white shadow-lg transition-all"
+            className="fixed w-10 h-10 rounded-full bg-green-600 dark:bg-gray-800 text-black dark:text-white shadow-lg transition-all"
+            style={{
+              bottom: '1rem',
+              right: '1rem',
+              zIndex:50,  
+            }}
           >
             {toggleTheme ? '🌙' : '☀️'}
           </button>
-        </div>
-      </header>
-
       <section class="py-10 sm:py-16 lg:py-24">
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
@@ -68,7 +73,7 @@ function Home() {
 
               <BlurText
                 text="Empowering Innovation, Shaping the Future."
-                delay={250}
+                delay={100}
                 animateBy="words"
                 direction="top"
                 onAnimationComplete={handleAnimationComplete}

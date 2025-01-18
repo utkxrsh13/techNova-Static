@@ -8,11 +8,11 @@ import React from "react";
 const About1 = () => {
   return (
     <>
-    <div id='about-us' className="bg-gradient-to-b from-green-200 to-green-300 dark:bg-gradient-to-b dark:from-[#14452F] dark:to-[#14452F] dark:text-white">
+    <div id='about-us' className="bg-gradient-to-b from-green-200 to-green-300 dark:bg-gradient-to-b dark:from-[#14452F] dark:to-[#14452F] dark:text-white py-12">
       
       <section className="overflow-hidden lg:pt-[10px] lg:pb-[90px] lg:px-3 ">
         <div className="container mx-auto">
-          <h2 className="translate-x-[50%] font-bold text-4xl underline">About Us</h2>
+          <h2 className=" font-bold text-4xl underline ml-14 decoration-orange-600">About Us</h2>
           <div className="flex flex-wrap items-center justify-between -mx-4">
             <div className="w-full px-4 sm:w-8/12 sm:m-auto lg:w-6/12">
               <div className="flex items-center -mx-3 sm:-mx-4 lg:w-9/12">
@@ -50,7 +50,7 @@ const About1 = () => {
                 <span className="block text-lg font-semibold text-primary">
                   Why
                 </span>
-                <span className="mb-4 text-3xl font-semibold">Choose Us</span>
+                <span className="mb-4 text-3xl font-semibold text-orange-600 dark:text-[#ADFF2F]">Choose Us</span>
                 <h2 className="relative border-t-[2px] border-black mb-5 text-3xl font-bold dark:border-white text-dark sm:text-[40px]/[48px]">
                   Make your customers happy by giving services.
                 </h2>
