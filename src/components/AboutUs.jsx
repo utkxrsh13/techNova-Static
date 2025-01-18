@@ -1,29 +1,8 @@
-// import React from 'react'
-
-// const AboutUs = () => {
-//   return (
-  
-//       <div className="about-us" id="about-us">
-//         <h2>About Us</h2>
-//         <p>At TechNova Innovations, we aim to revolutionize the tech world by providing innovative solutions.</p>
-//         <h3>Our Team</h3>
-//         <div className="team">
-//           <div className="team-member">
-//             <img src="/images/member1.jpg" alt="Team Member 1" />
-//             <p>John Doe - CEO</p>
-//           </div>
-//           <div className="team-member">
-//             <img src="/images/member2.jpg" alt="Team Member 2" />
-//             <p>Jane Smith - CTO</p>
-//           </div>
-//         </div>
-//       </div>
-//     );
-// }
-
-// export default AboutUs
+import doctor2 from '../assets/doctor2.jpeg'
+import d3 from '../assets/d3.jpeg'
+import d4 from '../assets/d4.jpeg'
 import React from "react";
-// import { InfiniteMovingCards } from "./infinite-moving-cards";
+
 
 
 const About1 = () => {
@@ -40,14 +19,14 @@ const About1 = () => {
                 <div className="w-full px-3 sm:px-4 xl:w-1/2">
                   <div className="py-3 sm:py-4">
                     <img
-                      src="https://i.ibb.co/gFb3ns6/image-1.jpg"
+                      src={d4}
                       alt="p3"
                       className="w-full rounded-2xl"
                     />
                   </div>
                   <div className="py-3 sm:py-4">
                     <img
-                      src="https://i.ibb.co/rfHFq15/image-2.jpg"
+                      src={d3}
                       alt="p2"
                       className="w-full rounded-2xl"
                     />
@@ -57,7 +36,7 @@ const About1 = () => {
                   <div className="relative z-10 my-4">
                   
                     <img
-                      src="https://i.ibb.co/9y7nYCD/image-3.jpg"
+                      src={doctor2}
                       alt="p1"
                       className="w-full rounded-2xl"
                     />

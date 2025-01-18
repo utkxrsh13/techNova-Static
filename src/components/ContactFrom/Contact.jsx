@@ -53,7 +53,7 @@ const Contact = () => {
             name="message" // Add this
             value={formData.message}
             onChange={handleChange}
-            rows={10}
+            rows={8}
             cols={30}
             id="message"
             className="textarea"

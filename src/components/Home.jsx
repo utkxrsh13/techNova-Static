@@ -7,25 +7,40 @@ function Home() {
 
 
   const handleAnimationComplete = () => {
-    console.log('Animation completed!');
-  };
-  const [darkMode, setDarkMode] = useState(
-    localStorage.getItem('theme') === 'dark' || false
-  );
-  // const containerRef = useRef(true);
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [darkMode]);
+    console.log('Animation completed!');}
+  // };useEffect(() => {
+  //   document.body.classList.add('dark'); // Add dark class to body
+  // }, []);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+  // const [darkMode, setDarkMode] = useState(
+  //   localStorage.getItem('theme') === 'dark' || false
+  // );
+  
+  // useEffect(() => {
+  //   if (darkMode) {
+  //     document.documentElement.classList.add('light');
+  //     localStorage.setItem('theme', 'light');
+  //   } else {
+  //     document.documentElement.classList.remove('dark');
+  //     localStorage.setItem('theme', 'dark');
+  //   }
+  // }, [darkMode]);
+  const [theme, setTheme] = useState('dark');  // Default theme is dark
+
+  // Step 2: Apply the theme to the body element
+  useEffect(() => {
+    document.body.className = theme;  // Apply the theme class to body
+  }, [theme]);
+
+  // Toggle theme function
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);  // Toggle between 'dark' and 'light'
   };
+
+  // const toggleDarkMode = () => {
+  //   setDarkMode(!darkMode);
+  // };
   return (
 
     <div id='home' className='bg-gradient-to-b from-green-50 to-green-100 dark:bg-gradient-to-b dark:from-[#14452F] dark:to-[#212224] dark:text-white '>
@@ -47,10 +62,10 @@ function Home() {
               <button className="mt-3 inline-flex items-center justify-center px-5 py-2.5 text-base font-semibold text-black border-2 border-black dark:text-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white rounded-2xl transition-all duration-300">Get Started</button>
             </div>
             <button
-              onClick={toggleDarkMode}
+              onClick={toggleTheme}
               className="fixed bottom-5 right-5 sm:relative sm:bottom-auto sm:right-auto sm:mt-3 flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-black dark:text-white shadow-lg transition-all"
             >
-              {darkMode ? '🌙' : '☀️'}
+              {toggleTheme ? '🌙' : '☀️'}
             </button>
           </div>
 
