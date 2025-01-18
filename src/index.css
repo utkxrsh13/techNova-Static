@@ -9,4 +9,6 @@
 
 * {
   -webkit-user-select: text; /* Allow text selection */
+  margin: 0;
+  padding: 0;
 }

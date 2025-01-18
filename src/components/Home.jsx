@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import 'remixicon/fonts/remixicon.css';
 import logo from '../assets/logo.jpg'
-import { InfiniteMovingCardsDemo } from "./InfiniteMovingCardsDemo";
-
+import BlurText from './heroText/BlurText';
 
 function Home() {
+
+
+  const handleAnimationComplete = () => {
+    console.log('Animation completed!');
+  };
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem('theme') === 'dark' || false
   );
-
+  // const containerRef = useRef(true);
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
@@ -25,7 +29,7 @@ function Home() {
   return (
 
     <div id='home' className='bg-gradient-to-b from-green-50 to-green-100 dark:bg-gradient-to-b dark:from-[#14452F] dark:to-[#212224] dark:text-white '>
-      <header>
+      <header className='relative'>
         <div className='flex justify-between'>
           <div className='px-3 flex text-xl'>
             <i className="mt-3 mr-1 ri-align-item-top-fill"></i>
@@ -44,7 +48,7 @@ function Home() {
             </div>
             <button
               onClick={toggleDarkMode}
-              className="flex items-center mt-3 justify-center w-10 h-10 rounded-full"
+              className="fixed bottom-5 right-5 sm:relative sm:bottom-auto sm:right-auto sm:mt-3 flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-black dark:text-white shadow-lg transition-all"
             >
               {darkMode ? '🌙' : '☀️'}
             </button>
@@ -58,13 +62,16 @@ function Home() {
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div>
-              <h1 class="text-4xl font-bold dark:text-white text-black sm:text-6xl lg:text-7xl">
-                Empowering Innovation,
-                <div class="relative inline-flex">
-                  <span class="absolute inset-x-0 bottom-0 lg:border-b-[20px] border-b-[25px] border-[#20a952]"></span>
-                  <h1 class="relative text-4xl font-bold text-black dark:text-white sm:text-6xl">Shaping the Future.</h1>
-                </div>
-              </h1>
+              
+              <BlurText
+                text="Empowering Innovation, Shaping the Future."
+                delay={250}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={handleAnimationComplete}
+                className="text-4xl font-bold dark:text-white text-black sm:text-6xl lg:text-7xl"
+              />
+             
 
               <p class="mt-8 sm:text-xl dark:text-white text-black ">TechNova is a cutting-edge technology solutions provider, dedicated to driving digital transformation across industries. From building dynamic web applications to implementing smart AI and ML systems, TechNova is your partner in navigating the future of technology.</p>
 
@@ -78,7 +85,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <InfiniteMovingCardsDemo />
+      
     </div>
   )
 }

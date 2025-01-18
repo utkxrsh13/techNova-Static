@@ -1,11 +1,11 @@
-/** @type {import('tailwindcss').Config} */
+import type { Config } from "tailwindcss";
 
 const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
-export default {
+const config: Config= {
   darkMode: 'class',
   content: [
     "./index.html",
@@ -15,20 +15,19 @@ export default {
     // rest of the code
     extend: {
       animation: {
-        scroll:
-          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        move: "move 5s linear infinite",
       },
       keyframes: {
-        scroll: {
-          to: {
-            transform: "translate(calc(-50% - 0.5rem))",
-          },
+        move: {
+          "0%": { transform: "translateX(-200px)" },
+          "100%": { transform: "translateX(200px)" },
         },
       },
     },
   },
-  plugins: [addVariablesForColors],
+  plugins: [],
 }
+export default config;
 
 function addVariablesForColors({ addBase, theme }: any) {
   let allColors = flattenColorPalette(theme("colors"));
