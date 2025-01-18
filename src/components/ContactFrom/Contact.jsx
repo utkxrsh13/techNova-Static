@@ -24,7 +24,7 @@ const Contact = () => {
   };
   return (
     <StyledWrapper>
-      <div className="form-container sm:w-[400px] lg:w-[600px]">
+      <div className="form-container mx-auto sm:w-[400px] lg:w-[600px]">
         <div className="form">
           <span className="heading">Get in touch</span>
 

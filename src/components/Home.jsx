@@ -5,79 +5,67 @@ import BlurText from './heroText/BlurText';
 
 function Home() {
 
+  const [isNavbarOpen, setNavbarOpen] = useState(false);
+  const toggleNavbar = () => setNavbarOpen(!isNavbarOpen);
 
   const handleAnimationComplete = () => {
-    console.log('Animation completed!');}
-  // };useEffect(() => {
-  //   document.body.classList.add('dark'); // Add dark class to body
-  // }, []);
-
-  // const [darkMode, setDarkMode] = useState(
-  //   localStorage.getItem('theme') === 'dark' || false
-  // );
-  
-  // useEffect(() => {
-  //   if (darkMode) {
-  //     document.documentElement.classList.add('light');
-  //     localStorage.setItem('theme', 'light');
-  //   } else {
-  //     document.documentElement.classList.remove('dark');
-  //     localStorage.setItem('theme', 'dark');
-  //   }
-  // }, [darkMode]);
-  const [theme, setTheme] = useState('dark');  // Default theme is dark
-
-  // Step 2: Apply the theme to the body element
+    console.log('Animation completed!');
+  }
+ 
+  const [theme, setTheme] = useState('dark'); 
   useEffect(() => {
-    document.body.className = theme;  // Apply the theme class to body
+    document.body.className = theme;  
   }, [theme]);
 
-  // Toggle theme function
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);  // Toggle between 'dark' and 'light'
   };
 
-  // const toggleDarkMode = () => {
-  //   setDarkMode(!darkMode);
-  // };
   return (
 
     <div id='home' className='bg-gradient-to-b from-green-50 to-green-100 dark:bg-gradient-to-b dark:from-[#14452F] dark:to-[#212224] dark:text-white '>
-      <header className='relative'>
-        <div className='flex justify-between'>
-          <div className='px-3 flex text-xl'>
+
+      <header className="relative">
+        <div className="flex justify-between">
+          <div className="px-3 flex text-xl">
             <i className="mt-3 mr-1 ri-align-item-top-fill"></i>
-            <span className='w-auto mt-3 h-8 font-bold'>Tech</span>
-            <span className='w-auto mt-3 h-8 font-bold text-green-500'>Nova</span>
+            <span className="w-auto mt-3 h-8 font-bold">Tech</span>
+            <span className="w-auto mt-3 h-8 font-bold text-green-500">Nova</span>
           </div>
-          <div className='flex gap-4 mr-7'>
-            <div className='flex'>
-              <div className='font-semibold mt-3 pt-3'>
-                <a className='mr-4 hover:underline hover:text-gray-600' href="#home">Home</a>
-                <a className='mr-4 hover:underline hover:text-gray-600' href="#services">Services</a>
-                <a className='mr-4 hover:underline hover:text-gray-600' href="#about-us">About Us</a>
-                <a className='mr-4 hover:underline hover:text-gray-600' href="#contact-us">Contact Us</a>
+          <div className="flex gap-4 mr-7">
+            <div className="flex items-center">
+              <button
+                className="sm:hidden mt-3 flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-black dark:text-white shadow-lg transition-all"
+                onClick={toggleNavbar}
+              >
+                <i className="ri-menu-line text-xl"></i>
+              </button>
+              <div className={`font-semibold mt-3 pt-3 sm:flex gap-4 ${isNavbarOpen ? 'block' : 'hidden'} sm:block`}>
+                <a className="mr-4 hover:underline hover:text-gray-600" href="#home">Home</a>
+                <a className="mr-4 hover:underline hover:text-gray-600" href="#services">Services</a>
+                <a className="mr-4 hover:underline hover:text-gray-600" href="#about-us">About Us</a>
+                <a className="mr-4 hover:underline hover:text-gray-600" href="#contact-us">Contact Us</a>
               </div>
-              <button className="mt-3 inline-flex items-center justify-center px-5 py-2.5 text-base font-semibold text-black border-2 border-black dark:text-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white rounded-2xl transition-all duration-300">Get Started</button>
             </div>
-            <button
-              onClick={toggleTheme}
-              className="fixed bottom-5 right-5 sm:relative sm:bottom-auto sm:right-auto sm:mt-3 flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-black dark:text-white shadow-lg transition-all"
-            >
-              {toggleTheme ? '🌙' : '☀️'}
+            <button className="mt-3 inline-flex items-center justify-center px-5 py-2.5 text-base font-semibold text-black border-2 border-black dark:text-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white rounded-2xl transition-all duration-300">
+              Get Started
             </button>
           </div>
-
+          <button
+            onClick={toggleTheme}
+            className="fixed bottom-5 right-5 sm:relative sm:bottom-auto sm:right-auto sm:mt-3 flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-black dark:text-white shadow-lg transition-all"
+          >
+            {toggleTheme ? '🌙' : '☀️'}
+          </button>
         </div>
-
       </header>
 
       <section class="py-10 sm:py-16 lg:py-24">
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div>
-              
+
               <BlurText
                 text="Empowering Innovation, Shaping the Future."
                 delay={250}
@@ -86,7 +74,7 @@ function Home() {
                 onAnimationComplete={handleAnimationComplete}
                 className="text-4xl font-bold dark:text-white text-black sm:text-6xl lg:text-7xl"
               />
-             
+
 
               <p class="mt-8 sm:text-xl dark:text-white text-black ">TechNova is a cutting-edge technology solutions provider, dedicated to driving digital transformation across industries. From building dynamic web applications to implementing smart AI and ML systems, TechNova is your partner in navigating the future of technology.</p>
 
@@ -100,7 +88,7 @@ function Home() {
           </div>
         </div>
       </section>
-      
+
     </div>
   )
 }
